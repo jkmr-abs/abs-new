@@ -29,9 +29,9 @@ function App() {
   };
 
   return (
-    <div className="app-shell">
+    <div className="h-screen w-screen overflow-hidden bg-abs-ink text-abs-text">
       <Navbar activeSection={activeSection} onNavigate={navigate} />
-      <main className="scroll-container" ref={mainRef}>
+      <main className="h-screen w-screen snap-y snap-mandatory overflow-x-hidden overflow-y-scroll scroll-smooth" ref={mainRef}>
         <Home onNavigate={navigate} />
       </main>
     </div>
