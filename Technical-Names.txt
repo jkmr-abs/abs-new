@@ -1,0 +1,440 @@
+ABS WEBSITE — TECHNICAL CONTENT NAMING
+=======================================
+
+1. GLOBAL APPLICATION STRUCTURE
+-------------------------------
+
+AppShell
+  Main application wrapper that contains the complete website.
+
+GlobalHeader
+  Fixed header container for the site-wide navigation.
+
+PrimaryNavigation
+  Main navigation menu containing Home, Service, Expertise, Client, and Team.
+
+ScrollContainer
+  Main scrollable container with vertical scroll snapping enabled.
+
+MainContent
+  Primary page content rendered inside the scroll container.
+
+SectionBlock
+  Reusable full-screen section wrapper shared by all content sections.
+
+GlobalFooter
+  Final full-screen footer section.
+
+Semantic HTML mapping:
+
+<header>  = GlobalHeader
+<nav>     = PrimaryNavigation
+<main>    = ScrollContainer / MainContent
+<section> = SectionBlock
+<footer>  = GlobalFooter
+
+
+2. SHARED REUSABLE COMPONENTS
+-----------------------------
+
+src/components/
+
+Button.jsx
+  Reusable action button component.
+
+  Variants:
+    primary   Filled orange button with dark text.
+    outline   Orange border with white text.
+
+  Supported icon directions:
+    up        ArrowUpRight icon.
+    down      ChevronDown icon.
+
+Logo.jsx
+  Shared ABS brand logo component used in the navbar and footer.
+
+  Logo content:
+    Brand mark: /public/logo.svg
+    Brand name: Abstract
+    Brand descriptor: Business System
+
+Navbar.jsx
+  Fixed global navigation component.
+
+Footer.jsx
+  Global footer component containing contact, brand, quick links, social links,
+  privacy policy, terms and copyright information.
+
+SectionBlock.jsx
+  Shared layout component for section labels, headings, descriptions, visual
+  interaction panels, and scroll snapping.
+
+navigation.js
+  Shared navigation item configuration.
+
+
+3. COMMON SECTION ARCHITECTURE
+------------------------------
+
+Every main section uses the following technical structure:
+
+[SectionName]Section
+├── [SectionName]PrimaryContentPanel
+│   ├── SectionIndex
+│   ├── SectionLabel
+│   ├── SectionTitle
+│   ├── SectionDescription
+│   └── SectionActionGroup (optional)
+└── [SectionName]InteractionPanel
+
+Important terminology:
+
+SectionIndex
+  Numeric section indicator such as 01, 02, or 03.
+
+SectionLabel
+  Small uppercase contextual label above the section title.
+  This is the technical replacement for the term "eyebrow".
+
+SectionTitle
+  Primary heading for the section.
+
+SectionDescription
+  Supporting explanatory text below the title.
+
+SectionActionGroup
+  Group of one or more actions or buttons associated with the section.
+
+PrimaryContentPanel
+  Left-side primary content panel containing section labels, headings,
+  descriptions, metrics, and actions.
+
+InteractionPanel
+  Right-side visual or interactive panel reserved for visual systems,
+  animations, data visualizations, or future Three.js Canvas content.
+
+
+4. HOME / HERO SECTION
+----------------------
+
+HomeSection
+├── HeroPrimaryContentPanel
+│   ├── SectionIndex
+│   ├── SectionLabel: OUR MOTTO
+│   ├── HeroTitle
+│   ├── HeroDescription
+│   ├── HeroActionGroup
+│   │   ├── PrimaryActionButton
+│   │   └── SecondaryActionButton
+│   └── HeroMetrics
+│       ├── PeopleMetric
+│       │   ├── MetricValue: 20+
+│       │   └── MetricLabel: People with purpose
+│       ├── BuildingMetric
+│       │   ├── MetricValue: 12
+│       │   └── MetricLabel: Years of building better
+│       └── PossibilitiesMetric
+│           ├── MetricValue: infinity symbol
+│           └── MetricLabel: Possibilities ahead
+└── HeroInteractionPanel
+    ├── HeroPanelHeader
+    ├── HeroOrbitVisual
+    ├── HeroCoordinateLabels
+    ├── HeroCenterMark
+    └── HeroPanelFooter
+
+HeroTitle:
+  Premium quality.
+  Affordable prices.
+
+HeroDescription:
+  Clarity in Simplicity. Transparency in Action. We design and deliver
+  thoughtful technology, exceptional teams, and the momentum to move your
+  business forward.
+
+HeroActionGroup:
+  PrimaryActionButton: what we do
+  SecondaryActionButton: Meet the team
+
+
+5. SERVICE SECTION
+-------------------
+
+ServiceSection
+├── ServicePrimaryContentPanel
+│   ├── SectionIndex
+│   ├── SectionLabel
+│   ├── ServiceTitle
+│   └── ServiceDescription
+└── ServiceInteractionPanel
+    ├── ServiceList
+    ├── ServiceListItem
+    ├── ServiceListIndex
+    ├── ActiveServiceItem
+    └── ServicePanelNote
+
+
+6. EXPERTISE SECTION
+---------------------
+
+ExpertiseSection
+├── ExpertisePrimaryContentPanel
+│   ├── SectionIndex
+│   ├── SectionLabel: OUR EXPERTISE
+│   ├── ExpertiseTitle
+│   └── ExpertiseDescription
+└── ExpertiseInteractionPanel
+    ├── ExpertiseSignalGrid
+    ├── CultureSignalCard
+    ├── FutureSignalCard
+    ├── CraftSignalCard
+    ├── SignalCardLabel
+    └── ExpertiseCategoryCaption
+
+ExpertiseTitle:
+  Technologies That
+  Power Ideas
+
+ExpertiseDescription:
+  We combine modern technologies to build scalable and high-performance
+  solutions.
+
+
+7. CLIENT SECTION
+------------------
+
+ClientSection
+├── ClientPrimaryContentPanel
+│   ├── SectionIndex
+│   ├── SectionLabel
+│   ├── ClientTitle
+│   └── ClientDescription
+└── ClientInteractionPanel
+    ├── TestimonialBlock
+    ├── TestimonialQuote
+    ├── TestimonialAuthor
+    ├── TestimonialRole
+    └── ClientLogoList
+
+
+8. TEAM SECTION
+----------------
+
+TeamSection
+├── TeamPrimaryContentPanel
+│   ├── SectionIndex
+│   ├── SectionLabel
+│   ├── TeamTitle
+│   └── TeamDescription
+└── TeamInteractionPanel
+    ├── TeamPortraitVisual
+    ├── TeamPortraitLabel
+    ├── TeamPanelCaption
+    └── TeamDecorativeMark
+
+
+9. FOOTER STRUCTURE
+--------------------
+
+GlobalFooter
+├── FooterHeader
+│   └── FooterPrompt
+├── FooterContactBlock
+│   ├── FooterSectionLabel
+│   ├── FooterTitle
+│   └── ContactEmailLink
+├── FooterResourceGrid
+│   ├── FooterBrandBlock
+│   │   ├── Logo
+│   │   └── BrandAddress
+│   ├── FooterQuickLinks
+│   │   └── FooterQuickLinkItem
+│   └── FooterSocialLinks
+│       └── FooterSocialLinkItem
+└── FooterLegalBar
+    ├── CopyrightNotice
+    ├── PrivacyPolicyLink
+    └── TermsConditionsLink
+
+
+10. VISUAL PANEL TERMINOLOGY
+----------------------------
+
+Visual panel terminology should use InteractionPanel rather than generic
+names such as image, box, or placeholder.
+
+Recommended names:
+
+HeroInteractionPanel
+ServiceInteractionPanel
+ExpertiseInteractionPanel
+ClientInteractionPanel
+TeamInteractionPanel
+
+Future Three.js replacements:
+
+HeroCanvas
+ServiceCanvas
+ExpertiseCanvas
+ClientCanvas
+TeamCanvas
+
+These Canvas components can replace the current InteractionPanel visual
+implementations without changing the section layout.
+
+
+11. SERVICE CONTENT SLIDER ARCHITECTURE
+---------------------------------------
+
+The Service section uses three content slides. If the Service section content
+changes through slides, use the term ServiceContentSlider instead of a static
+ServicePrimaryContentPanel.
+
+ServiceSection
+├── ServiceContentSlider
+│   ├── ServiceSectionTitle
+│   ├── ServiceSectionDescription
+│   ├── ServiceSlide
+│   │   ├── ServiceSlideIcon
+│   │   ├── ServiceSlideTitle
+│   │   └── ServiceSlideDescription
+│   ├── ServiceSliderControls
+│   │   ├── ServicePreviousButton
+│   │   └── ServiceNextButton
+│   └── ServiceSlideIndicator
+└── ServiceInteractionPanel
+
+Recommended technical names:
+
+ServiceContentSlider
+  Interactive slider containing the service content.
+
+ServiceSlide
+  One individual service item in the slider.
+
+ServiceSlideIcon
+  Icon representing the current service.
+
+ServiceSlideTitle
+  Title of the current service slide.
+
+ServiceSlideDescription
+  Description of the current service slide.
+
+ServiceSectionTitle
+  Main title displayed above the service slider.
+
+ServiceSectionDescription
+  Supporting description displayed below the service title.
+
+ServiceSliderControls
+  Container for previous and next slide controls.
+
+ServicePreviousButton
+  Control that moves to the previous service slide.
+
+ServiceNextButton
+  Control that moves to the next service slide.
+
+ServiceSlideIndicator
+  Pagination indicator showing the active slide and total slides.
+
+Example technical markup:
+
+<div data-component="ServiceContentSlider">
+  <article data-component="ServiceSlide">
+    <span data-element="ServiceSlideIcon"></span>
+    <h2 data-element="ServiceSlideTitle"></h2>
+    <p data-element="ServiceSlideDescription"></p>
+  </article>
+  <div data-component="ServiceSliderControls">
+    <button data-action="ServicePreviousButton"></button>
+    <button data-action="ServiceNextButton"></button>
+  </div>
+  <div data-element="ServiceSlideIndicator"></div>
+</div>
+
+
+12. FILE STRUCTURE
+-------------------
+
+src/
+├── App.jsx
+├── index.css
+├── main.jsx
+├── components/
+│   ├── Button.jsx
+│   ├── Footer.jsx
+│   ├── Logo.jsx
+│   ├── Navbar.jsx
+│   ├── SectionBlock.jsx
+│   └── navigation.js
+└── pages/
+    └── Home/
+        ├── index.jsx
+        └── components/
+            ├── ClientSection.jsx
+            ├── ExpertiseSection.jsx
+            ├── HomeSection.jsx
+            ├── ServiceSection.jsx
+            └── TeamSection.jsx
+
+
+13. DOM TECHNICAL TAGS
+---------------------
+
+The implementation exposes technical names directly on DOM elements using
+custom data attributes for inspection, testing, and future integration:
+
+AppShell:
+  data-component="AppShell"
+
+ScrollContainer:
+  data-component="ScrollContainer"
+
+Section:
+  data-section-component="[sectionName]Section"
+
+Primary content area:
+  data-component="PrimaryContentPanel"
+
+Interactive visual area:
+  data-component="InteractionPanel"
+  data-panel-type="visual"
+
+Section text elements:
+  data-element="SectionIndex"
+  data-element="SectionLabel"
+  data-element="SectionTitle"
+  data-element="SectionDescription"
+  data-element="SectionActionGroup"
+
+Global navigation:
+  data-component="GlobalHeader"
+  data-component="PrimaryNavigation"
+
+Footer elements:
+  data-section-component="GlobalFooter"
+  data-component="FooterContactBlock"
+  data-component="FooterBrandBlock"
+  data-component="FooterResourceGrid"
+  data-component="FooterQuickLinks"
+  data-component="FooterSocialLinks"
+  data-component="FooterLegalBar"
+
+
+14. NAMING RULES
+----------------
+
+1. Use PascalCase for React component names.
+2. Use descriptive section prefixes such as Hero, Service, Expertise,
+   Client, Team, and Footer.
+3. Use PrimaryContentPanel for the main text and action area of a section.
+4. Use InteractionPanel for visual or interactive right-side areas.
+5. Use SectionLabel instead of eyebrow.
+6. Use SectionTitle for main section headings.
+7. Use SectionDescription for supporting descriptions.
+8. Use ActionGroup for groups of buttons.
+9. Use MetricValue and MetricLabel for statistics.
+10. Use FooterLegalBar for copyright and legal links.
+11. Use Canvas suffix for future Three.js components.
