@@ -1,5 +1,4 @@
 import { Asterisk } from 'lucide-react';
-import ActionLink from '../../../components/ActionLink';
 import SectionBlock from '../../../components/SectionBlock';
 
 function TeamVisual() {
@@ -17,9 +16,9 @@ function TeamVisual() {
   );
 }
 
-function TeamSection({ onNavigate }) {
+function TeamSection() {
   return (
-    <SectionBlock id="team" number="05" eyebrow="The studio" title="Small enough to<br /><em>care more.</em>" description="A close-knit collective with big-agency range. We bring the right minds to every challenge, and stay close from day one to done." action={<ActionLink onClick={() => onNavigate('footer')}>Come say hello</ActionLink>}>
+    <SectionBlock id="team" number="05" eyebrow="The studio" title="Small enough to<br /><em>care more.</em>" description="A close-knit collective with big-agency range. We bring the right minds to every challenge, and stay close from day one to done.">
       <TeamVisual />
     </SectionBlock>
   );

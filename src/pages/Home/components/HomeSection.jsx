@@ -1,5 +1,5 @@
 import { Asterisk } from 'lucide-react';
-import ActionLink from '../../../components/ActionLink';
+import Button from '../../../components/Button';
 import SectionBlock from '../../../components/SectionBlock';
 
 function CircleMark() {
@@ -28,7 +28,7 @@ function HeroVisual() {
 
 function HomeSection({ onNavigate }) {
   return (
-    <SectionBlock id="home" number="01" eyebrow="Independent creative studio" title="We make brands<br /><em>matter.</em>" description="ABS is an independent studio for ambitious people and meaningful ideas. We build identities, experiences and worlds that move culture forward." action={<ActionLink onClick={() => onNavigate('service')}>See what we do</ActionLink>}>
+    <SectionBlock id="home" number="01" eyebrow="Independent creative studio" title="We make brands<br /><em>matter.</em>" description="ABS is an independent studio for ambitious people and meaningful ideas. We build identities, experiences and worlds that move culture forward." action={<div className="flex flex-wrap gap-3"><Button onClick={() => onNavigate('service')}>See what we do</Button><Button variant="outline" onClick={() => onNavigate('team')}>Meet the team</Button></div>}>
       <HeroVisual />
     </SectionBlock>
   );

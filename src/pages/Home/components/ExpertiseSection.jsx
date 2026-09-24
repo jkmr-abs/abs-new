@@ -1,5 +1,4 @@
 import { ArrowDownRight } from 'lucide-react';
-import ActionLink from '../../../components/ActionLink';
 import SectionBlock from '../../../components/SectionBlock';
 
 function ExpertiseVisual() {
@@ -16,9 +15,9 @@ function ExpertiseVisual() {
   );
 }
 
-function ExpertiseSection({ onNavigate }) {
+function ExpertiseSection() {
   return (
-    <SectionBlock id="expertise" number="03" eyebrow="How we think" title="Curious by nature.<br /><em>Precise by design.</em>" description="We look sideways before we look forward. The best answers often live between disciplines, industries and the obvious next step." action={<ActionLink onClick={() => onNavigate('client')}>Our point of view</ActionLink>}>
+    <SectionBlock id="expertise" number="03" eyebrow="How we think" title="Curious by nature.<br /><em>Precise by design.</em>" description="We look sideways before we look forward. The best answers often live between disciplines, industries and the obvious next step.">
       <ExpertiseVisual />
     </SectionBlock>
   );

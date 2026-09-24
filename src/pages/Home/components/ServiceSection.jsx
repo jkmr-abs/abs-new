@@ -1,5 +1,4 @@
 import { ArrowUpRight } from 'lucide-react';
-import ActionLink from '../../../components/ActionLink';
 import SectionBlock from '../../../components/SectionBlock';
 
 function ServiceVisual() {
@@ -20,9 +19,9 @@ function ServiceVisual() {
   );
 }
 
-function ServiceSection({ onNavigate }) {
+function ServiceSection() {
   return (
-    <SectionBlock id="service" number="02" eyebrow="What we do" title="From first thought<br />to <em>full feeling.</em>" description="We bring strategy, design and technology together under one roof. No hand-offs. No lost-in-translation moments. Just work that lands." action={<ActionLink onClick={() => onNavigate('expertise')}>Explore our services</ActionLink>}>
+    <SectionBlock id="service" number="02" eyebrow="What we do" title="From first thought<br />to <em>full feeling.</em>" description="We bring strategy, design and technology together under one roof. No hand-offs. No lost-in-translation moments. Just work that lands.">
       <ServiceVisual />
     </SectionBlock>
   );

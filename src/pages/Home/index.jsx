@@ -9,10 +9,10 @@ function Home({ onNavigate }) {
   return (
     <>
       <HomeSection onNavigate={onNavigate} />
-      <ServiceSection onNavigate={onNavigate} />
-      <ExpertiseSection onNavigate={onNavigate} />
-      <ClientSection onNavigate={onNavigate} />
-      <TeamSection onNavigate={onNavigate} />
+      <ServiceSection />
+      <ExpertiseSection />
+      <ClientSection />
+      <TeamSection />
       <Footer onNavigate={onNavigate} />
     </>
   );

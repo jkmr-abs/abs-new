@@ -5,14 +5,14 @@ import { navItems } from './navigation';
 function Footer({ onNavigate }) {
   return (
     <section id="footer" className="flex h-screen w-screen snap-start snap-always flex-col justify-between bg-[radial-gradient(circle_at_75%_75%,rgba(255,103,29,0.1),transparent_26rem),#08090c] pb-[22px] pt-[88px] md:pb-[30px] md:pt-[111px]">
-      <div className="mx-auto flex w-[88vw] justify-end text-[9px] uppercase tracking-[0.14em] text-abs-muted/55 md:w-[89vw]"><span>Let’s make something matter.</span></div>
-      <div className="mx-auto flex w-[88vw] flex-col justify-between pb-5 md:w-[89vw] md:flex-row md:items-end md:pb-[30px]">
+      <div className="mx-auto grid w-[88vw] grid-cols-1 justify-items-end text-[9px] uppercase tracking-[0.14em] text-abs-muted/55 md:w-[89vw]"><span>Let’s make something matter.</span></div>
+      <div className="mx-auto grid w-[88vw] grid-cols-1 gap-12 pb-5 md:w-[89vw] md:grid-cols-[minmax(0,1fr)_auto] md:items-end md:gap-[clamp(55px,9vw,150px)] md:pb-[30px]">
         <div>
           <div className="mb-[21px] flex items-center gap-[11px] text-[10px] font-medium uppercase tracking-[0.16em] text-abs-muted"><span className="font-display text-[11px] tracking-[0.02em] text-abs-orange">06</span><i className="block h-px w-[27px] bg-abs-orange opacity-70" />Get in touch</div>
           <h2 className="font-display text-[54px] font-medium leading-[0.98] tracking-[-0.075em] text-abs-text md:text-[clamp(52px,7vw,104px)]">Have a good<br /><em className="not-italic text-abs-orange">feeling?</em></h2>
           <a className="mt-[23px] inline-flex items-center gap-2 border-b border-abs-orange pb-[7px] text-[13px] text-abs-orange-soft md:mt-[35px]" href="mailto:hello@abs.studio">hello@abs.studio <ArrowUpRight size={18} className="text-abs-orange" /></a>
         </div>
-        <div className="mt-[47px] flex gap-[50px] pb-[5px] md:mt-0 md:gap-[clamp(55px,9vw,150px)]">
+        <div className="mt-0 grid grid-cols-2 gap-[50px] pb-[5px] md:gap-[clamp(55px,9vw,150px)]">
           <div className="flex min-w-[90px] flex-col gap-3"><span className="mb-1.5 text-[9px] uppercase tracking-[0.14em] text-abs-muted/45">Explore</span>{navItems.map((item) => <button className="inline-flex w-max items-center gap-[7px] bg-transparent p-0 text-xs text-abs-muted transition hover:text-abs-orange" key={item.id} onClick={() => onNavigate(item.id)}>{item.label}</button>)}</div>
           <div className="flex min-w-[90px] flex-col gap-3"><span className="mb-1.5 text-[9px] uppercase tracking-[0.14em] text-abs-muted/45">Elsewhere</span><a className="inline-flex w-max items-center gap-[7px] text-xs text-abs-muted transition hover:text-abs-orange" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn <ArrowUpRight size={14} /></a><a className="inline-flex w-max items-center gap-[7px] text-xs text-abs-muted transition hover:text-abs-orange" href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram <ArrowUpRight size={14} /></a></div>
         </div>

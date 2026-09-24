@@ -1,4 +1,3 @@
-import ActionLink from '../../../components/ActionLink';
 import SectionBlock from '../../../components/SectionBlock';
 
 function ClientVisual() {
@@ -14,9 +13,9 @@ function ClientVisual() {
   );
 }
 
-function ClientSection({ onNavigate }) {
+function ClientSection() {
   return (
-    <SectionBlock id="client" number="04" eyebrow="Selected partners" title="Good company<br />makes <em>great work.</em>" description="We partner with teams who care deeply about what they put into the world — from first-time founders to global names." action={<ActionLink onClick={() => onNavigate('team')}>Meet the team</ActionLink>}>
+    <SectionBlock id="client" number="04" eyebrow="Selected partners" title="Good company<br />makes <em>great work.</em>" description="We partner with teams who care deeply about what they put into the world — from first-time founders to global names.">
       <ClientVisual />
     </SectionBlock>
   );
