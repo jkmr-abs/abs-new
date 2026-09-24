@@ -1,12 +1,11 @@
-function Logo() {
+function Logo({ className = '' }) {
   return (
-    <a className="inline-flex items-center gap-2.5 font-display text-[21px] font-semibold tracking-[-0.08em]" href="#home" aria-label="ABS home">
-      <span className="flex h-[21px] -skew-x-[18deg] items-center gap-0.5">
-        <span className="h-[11px] w-1 bg-abs-orange/55" />
-        <span className="h-[17px] w-1 bg-abs-orange/80" />
-        <span className="h-[21px] w-1 bg-abs-orange" />
+    <a className={`inline-flex items-center gap-3 ${className}`} href="#home" aria-label="Abstract Business System home">
+      <img className="h-10 w-auto object-contain md:h-12" src="/logo.svg" alt="" aria-hidden="true" />
+      <span className="flex flex-col font-display leading-none">
+        <span className="text-[17px] font-medium tracking-[-0.06em] text-abs-text md:text-[19px]">Abstract</span>
+        <span className="mt-1 text-[8px] font-medium tracking-[0.13em] text-abs-orange md:text-[9px]">Business System</span>
       </span>
-      <span>ABS<span className="text-abs-orange">.</span></span>
     </a>
   );
 }
