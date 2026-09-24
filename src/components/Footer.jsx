@@ -28,27 +28,28 @@ function Footer({ onNavigate }) {
 
       <div className="mx-auto grid w-[88vw] grid-cols-1 gap-10 md:w-[89vw] md:grid-cols-[minmax(130px,0.7fr)_minmax(0,1.3fr)] md:items-end md:gap-8 lg:gap-[clamp(55px,7vw,110px)]">
         <div className="flex flex-col items-start gap-3 md:self-start">
-          <span className="text-[9px] uppercase tracking-[0.14em] text-abs-muted/45">Studio</span>
           <Logo />
-          <span className="text-[8px] leading-[1.5] text-abs-muted">45 Walker Street<br />New York, NY 10013</span>
+          <span className="text-[10px] leading-[1.6] text-abs-muted md:text-[11px]">45 Walker Street<br />New York, NY 10013</span>
         </div>
         <div className="grid grid-cols-2 gap-8">
           <div className="flex min-w-[90px] flex-col gap-3">
-            <span className="mb-1.5 text-[9px] uppercase tracking-[0.14em] text-abs-muted/45">Quick links</span>
+            <span className="mb-1.5 text-[9px] uppercase tracking-[0.14em] text-abs-orange">Quick links</span>
             {navItems.map((item) => <button className="inline-flex w-max items-center gap-[7px] bg-transparent p-0 text-xs text-abs-muted transition hover:text-abs-orange" key={item.id} onClick={() => onNavigate(item.id)}>{item.label}</button>)}
           </div>
           <div className="flex min-w-[90px] flex-col gap-3">
-            <span className="mb-1.5 text-[9px] uppercase tracking-[0.14em] text-abs-muted/45">Elsewhere</span>
+            <span className="mb-1.5 text-[9px] uppercase tracking-[0.14em] text-abs-orange">Elsewhere</span>
             <a className="inline-flex w-max items-center gap-[7px] text-xs text-abs-muted transition hover:text-abs-orange" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn <ArrowUpRight size={14} /></a>
             <a className="inline-flex w-max items-center gap-[7px] text-xs text-abs-muted transition hover:text-abs-orange" href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram <ArrowUpRight size={14} /></a>
           </div>
         </div>
       </div>
 
-      <div className="mx-auto grid w-[88vw] grid-cols-1 gap-2 border-t border-white/[0.13] pt-[15px] text-[7px] tracking-[0.08em] text-[#858b96] md:w-[89vw] md:grid-cols-3 md:items-center md:pt-[21px] md:text-[9px]">
-        <span>© 2024 ABS Studio. All rights reserved.</span>
-        <a className="transition hover:text-abs-orange md:text-center" href="#privacy">Privacy policy</a>
-        <a className="transition hover:text-abs-orange md:text-right" href="#terms">Terms &amp; conditions</a>
+      <div className="mx-auto grid w-[88vw] grid-cols-2 items-start gap-2 border-t border-white/[0.13] pt-[15px] text-[7px] tracking-[0.08em] text-[#858b96] md:w-[89vw] md:items-center md:pt-[21px] md:text-[9px]">
+        <span>© 2024 Abstract Business System. All rights reserved.</span>
+        <div className="flex flex-row items-center justify-end gap-4 text-right">
+          <a className="transition hover:text-abs-orange" href="#privacy">Privacy policy</a>
+          <a className="transition hover:text-abs-orange" href="#terms">Terms &amp; conditions</a>
+        </div>
       </div>
     </section>
   );

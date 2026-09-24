@@ -17,7 +17,7 @@ function ExpertiseVisual() {
 
 function ExpertiseSection() {
   return (
-    <SectionBlock id="expertise" number="03" eyebrow="How we think" title="Curious by nature.<br /><em>Precise by design.</em>" description="We look sideways before we look forward. The best answers often live between disciplines, industries and the obvious next step.">
+    <SectionBlock id="expertise" number="03" eyebrow="OUR EXPERTISE" title="<span class='whitespace-nowrap'>Technologies That</span><br />Power <em>Ideas</em>" description="We combine modern technologies to build scalable and high-performance solutions.">
       <ExpertiseVisual />
     </SectionBlock>
   );
