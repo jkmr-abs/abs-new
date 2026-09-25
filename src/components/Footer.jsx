@@ -1,7 +1,8 @@
 import Logo from './Logo';
 import SectionLabel from './SectionLabel';
-import { footerData } from '../data/homeData';
-import { navItems } from './navigation';
+import data from '../data/data';
+
+const { footer: footerData, navigation: navItems } = data;
 
 function Footer({ onNavigate }) {
   return (
@@ -24,7 +25,7 @@ function Footer({ onNavigate }) {
           </div>
           <div data-component="FooterSocialLinks" className="flex min-w-0 flex-col gap-3">
             <span data-element="FooterResourceLabel" className="mb-1.5 text-[9px] uppercase tracking-[0.14em] text-abs-orange">{footerData.socialLinksLabel}</span>
-            {footerData.socialLinks.map((link) => <a className="inline-flex w-max text-xs text-abs-muted transition hover:text-abs-orange" href={link.href} key={`${link.label}-${link.href}`}>{link.label}</a>)}
+            {footerData.socialLinks.map((link, index) => <a className="inline-flex w-max text-xs text-abs-muted transition hover:text-abs-orange" href={link.href} key={`${link.label}-${link.href}-${index}`}>{link.label}</a>)}
           </div>
         </div>
       </div>

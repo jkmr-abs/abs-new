@@ -38,9 +38,20 @@ Semantic HTML mapping:
 -----------------------------
 
 src/components/
+├── common/
+│   ├── ActionButtons.jsx
+│   ├── AdditionalDetails.jsx
+│   ├── Description.jsx
+│   ├── Features.jsx
+│   ├── Label.jsx
+│   ├── PrimaryButton.jsx
+│   ├── SectionTitle.jsx
+│   ├── SecondaryButton.jsx
+│   ├── SlideNavigation.jsx
+│   └── Stats.jsx
 
 Button.jsx
-  Reusable action button component.
+  Base reusable action button component.
 
   Variants:
     primary   Filled orange button with dark text.
@@ -136,17 +147,19 @@ HomeSection
 5. SERVICE SECTION
 -------------------
 
-ServiceSection
+ServicesSection
 ├── PrimaryContentPanel
-│   └── ServiceContentSlider
-│       ├── SectionLabel
+│   └── ServiceSlide
+│       ├── Label
 │       ├── ServiceSectionTitle
 │       ├── ServiceSectionDescription
-│       ├── ServiceFeatureList
+│       ├── Features
 │       │   └── ServiceSlideFeature
 │       │       ├── ServiceSlideIcon
 │       │       └── ServiceSlideFeatureContent
-│       └── ServiceSliderControls
+│       ├── ActionButtons (optional)
+│       ├── AdditionalDetails (optional)
+│       └── SlideNavigation
 └── InteractionPanel
     └── LPDoubleWavePlaceholder
 
@@ -332,19 +345,31 @@ src/
 ├── components/
 │   ├── Button.jsx
 │   ├── Footer.jsx
+│   ├── InteractionPanel.jsx
+│   ├── InteractionPlaceholder.jsx
 │   ├── Logo.jsx
 │   ├── Navbar.jsx
+│   ├── PrimaryContentPanel.jsx
 │   ├── SectionBlock.jsx
+│   ├── SectionLabel.jsx
 │   └── navigation.js
+├── data/
+│   └── data.js (single website content source)
 └── pages/
     └── Home/
         ├── index.jsx
-        └── components/
-            ├── ClientSection.jsx
-            ├── ExpertiseSection.jsx
-            ├── HomeSection.jsx
-            ├── ServiceSection.jsx
-            └── TeamSection.jsx
+        ├── Hero/
+        │   └── HeroSection.jsx
+        ├── Services/
+        │   ├── ServicesSection.jsx
+        │   ├── ServiceSlide.jsx
+        │   └── ServiceNavigation.jsx
+        ├── Expertise/
+        │   └── ExpertiseSection.jsx
+        ├── Clients/
+        │   └── ClientsSection.jsx
+        └── Teams/
+            └── TeamsSection.jsx
 
 
 13. DOM TECHNICAL TAGS

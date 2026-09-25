@@ -1,10 +1,6 @@
 import InteractionPlaceholder from '../../../components/InteractionPlaceholder';
 import SectionBlock from '../../../components/SectionBlock';
-import { sectionData } from '../../../data/homeData';
-
-const expertiseData = sectionData.expertise;
-
-function ExpertiseSection() {
+function ExpertiseSection({ data: expertiseData }) {
   return (
     <SectionBlock
       id={expertiseData.id}
@@ -12,6 +8,7 @@ function ExpertiseSection() {
       sectionLabel={expertiseData.sectionLabel}
       title={expertiseData.title}
       description={expertiseData.description}
+      interactionData={expertiseData.interaction}
     >
       <InteractionPlaceholder sectionId={expertiseData.id} />
     </SectionBlock>

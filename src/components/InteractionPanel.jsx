@@ -1,6 +1,6 @@
-function InteractionPanel({ sectionLabel, children }) {
+function InteractionPanel({ sectionLabel, data, children }) {
   return (
-    <div data-component="InteractionPanel" data-panel-type="visual" aria-label={`${sectionLabel} visual placeholder`} className="min-w-0 h-full self-start lg:h-auto lg:self-center">
+    <div data-component="InteractionPanel" data-panel-type="visual" data-interaction-type={data?.type || 'placeholder'} aria-label={`${sectionLabel} visual placeholder`} className="min-w-0 h-full lg:h-auto">
       {children}
     </div>
   );
