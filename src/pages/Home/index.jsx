@@ -10,7 +10,7 @@ function Home({ onNavigate }) {
   return (
     <>
       <HeroSection data={data.hero} onNavigate={onNavigate} />
-      <ServicesSection services={data.services} />
+      <ServicesSection services={data.services} sectionLabel={data.servicesLabel} />
       <ExpertiseSection data={data.expertise} />
       <ClientsSection data={data.clients} />
       <TeamsSection data={data.teams} />

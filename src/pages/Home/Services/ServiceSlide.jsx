@@ -5,20 +5,21 @@ import Features from '../../../components/common/Features';
 import Label from '../../../components/common/Label';
 import SectionTitle from '../../../components/common/SectionTitle';
 import ServiceNavigation from './ServiceNavigation';
+import ServiceTitleFrame from './ServiceTitleFrame';
 
-function ServiceSlide({ service, currentIndex, totalSlides, onPrevious, onNext }) {
+function ServiceSlide({ service, currentIndex, totalSlides, onPrevious, onNext, sectionLabel = 'OUR SERVICES' }) {
   return (
     <article data-component="ServiceSlide" className="relative z-10 max-w-[560px] self-start lg:self-auto">
-      <Label label={service.label} />
+      <Label label={sectionLabel} />
 
-      <div data-element="ServiceTitleFrame" className="flex h-[88px] items-start overflow-hidden sm:h-[104px] lg:h-[138px]">
+      <ServiceTitleFrame>
         <SectionTitle
           title={service.title}
           highlightWordIndex={service.title.trim().split(/\s+/).length > 1 ? 1 : 0}
           dataElement="ServiceSectionTitle"
           className="line-clamp-2 lg:text-[clamp(42px,4.2vw,68px)]"
         />
-      </div>
+      </ServiceTitleFrame>
 
       {service.description && (
         <Description

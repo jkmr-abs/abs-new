@@ -12,7 +12,7 @@ function ServiceInteractionPlaceholder({ service }) {
   );
 }
 
-function ServicesSection({ services = [] }) {
+function ServicesSection({ services = [], sectionLabel = 'OUR SERVICES' }) {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const activeService = services[activeSlideIndex];
 
@@ -30,7 +30,7 @@ function ServicesSection({ services = [] }) {
     <SectionBlock
       id="service"
       number="02"
-      sectionLabel={activeService.label}
+      sectionLabel={sectionLabel}
       interactionData={activeService.interaction}
       primaryContent={(
         <div data-component="PrimaryContentPanel" data-section-id="service">
@@ -40,6 +40,7 @@ function ServicesSection({ services = [] }) {
             totalSlides={services.length}
             onPrevious={() => selectSlide(-1)}
             onNext={() => selectSlide(1)}
+            sectionLabel={sectionLabel}
           />
         </div>
       )}

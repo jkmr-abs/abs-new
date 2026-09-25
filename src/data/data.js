@@ -25,6 +25,8 @@ const data = {
     interaction: { type: 'hero-placeholder' },
   },
 
+  servicesLabel: 'OUR SERVICES',
+
   services: [
     {
       id: 'custom-software-solution',
@@ -45,7 +47,6 @@ const data = {
       id: 'talent-recruitment',
       label: 'Recruitment Solution',
       title: 'Talent Recruitment',
-      description: '',
       features: [
         { id: 'recruitment-feature-1', icon: 'circle', title: 'Talent sourcing', description: 'We identify, attract, and engage with the best candidates in your industry.' },
         { id: 'recruitment-feature-2', icon: 'circle', title: 'Screening and assessment', description: 'Our rigorous evaluation process ensures you get the right fit.' },
@@ -61,7 +62,6 @@ const data = {
       id: 'staffing-solutions',
       label: 'Staffing Solution',
       title: 'Staffing Solutions',
-      description: '',
       features: [
         { id: 'staffing-feature-1', icon: 'circle', title: 'Find and hire top talent, quickly.' },
         { id: 'staffing-feature-2', icon: 'circle', title: 'Help build diverse teams.' },
