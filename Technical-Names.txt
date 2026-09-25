@@ -247,9 +247,12 @@ ServicePrimaryContentPanel.
 
 ServiceSection
 ├── ServiceContentSlider
-│   ├── ServiceSectionTitle
-│   ├── ServiceSectionDescription (conditional)
-│   ├── ServiceFeatureList
+│   ├── ServiceTitleFrame
+│   │   └── ServiceSectionTitle
+│   ├── ServiceDescriptionFrame
+│   │   └── ServiceSectionDescription (conditional)
+│   ├── ServiceFeatureFrame
+│   │   └── ServiceFeatureList
 │   │   └── ServiceSlideFeature
 │   │       ├── ServiceSlideIcon
 │   │       └── ServiceSlideFeatureContent
@@ -278,6 +281,15 @@ ServiceSectionTitle
 
 ServiceSectionDescription
   Supporting description displayed below the service title.
+
+ServiceTitleFrame
+  Fixed responsive area that keeps service titles at a stable height.
+
+ServiceDescriptionFrame
+  Fixed responsive area that keeps features aligned when a description is absent.
+
+ServiceFeatureFrame
+  Fixed responsive area that keeps navigation aligned across different feature counts.
 
 ServiceSliderControls
   Container for previous and next slide controls.
