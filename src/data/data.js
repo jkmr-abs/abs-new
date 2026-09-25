@@ -1,10 +1,10 @@
 const data = {
   navigation: [
-    { id: 'home', label: 'Home', number: '01' },
-    { id: 'service', label: 'Service', number: '02' },
-    { id: 'expertise', label: 'Expertise', number: '03' },
-    { id: 'client', label: 'Client', number: '04' },
-    { id: 'team', label: 'Team', number: '05' },
+    { id: 'home', label: 'Home',  },
+    { id: 'service', label: 'Service', },
+    { id: 'expertise', label: 'Expertise',  },
+    { id: 'client', label: 'Client', },
+    { id: 'team', label: 'Team',  },
   ],
 
   hero: {
@@ -15,7 +15,7 @@ const data = {
     titleLines: ['Premium quality.', 'Affordable prices.'],
     titleHighlightWordIndexes: [1, 3],
     description: 'Clarity in Simplicity. Transparency in Action. We design and deliver thoughtful technology, exceptional teams, and the momentum to move your business forward.',
-    primaryButton: { label: 'what we do', target: 'service' },
+    primaryButton: { label: 'What we do', target: 'service' },
     secondaryButton: { label: 'Meet the team', target: 'team', icon: 'down' },
     additionalDetails: [
       { id: 'hero-detail-1', value: '20+', label: 'People with purpose' },
@@ -78,21 +78,22 @@ const data = {
   expertise: {
     id: 'expertise',
     number: '03',
-    sectionLabel: 'EXPERTISE LABEL',
-    title: 'Expertise section title',
-    description: 'Expertise section description',
+    sectionLabel: 'OUR EXPERTISE',
+    title: 'Technologies That Power Ideas',
+    titleLines: ['Technologies That', 'Power Ideas'],
+    titleHighlightWordIndexes: [3],
+    description: 'We combine modern technologies to build scalable and high-performance solutions',
     interaction: { type: 'expertise-placeholder' },
   },
 
   clients: {
     id: 'client',
     number: '04',
-    sectionLabel: 'CLIENTS LABEL',
-    title: 'Clients section title',
-    supportingBlocks: [
-      { title: 'Client content block', description: 'Supporting content placeholder' },
-      { title: 'Client content block', description: 'Supporting content placeholder' },
-    ],
+    sectionLabel: 'OUR HAPPY CUSTOMERS',
+    title: 'Trusted Brands. Better Futures.',
+    titleLines: ['Trusted Brands.', 'Better Futures.'],
+    titleHighlightWordIndexes: [1, 3],
+    description: 'We are proud to partner with forward-thinking organizations across industries.',
     interaction: { type: 'clients-placeholder' },
   },
 

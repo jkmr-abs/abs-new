@@ -7,6 +7,8 @@ function ExpertiseSection({ data: expertiseData }) {
       number={expertiseData.number}
       sectionLabel={expertiseData.sectionLabel}
       title={expertiseData.title}
+      titleLines={expertiseData.titleLines}
+      titleHighlightWordIndexes={expertiseData.titleHighlightWordIndexes}
       description={expertiseData.description}
       interactionData={expertiseData.interaction}
     >
