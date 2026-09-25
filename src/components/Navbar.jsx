@@ -27,9 +27,9 @@ function Navbar({ activeSection, onNavigate }) {
             </button>
           ))}
         </nav>
-        <button className="ml-auto hidden items-center gap-2 rounded-full border border-abs-orange/55 bg-abs-orange/[0.08] px-4 py-[11px] text-[11px] tracking-[0.025em] text-abs-orange-soft transition hover:bg-abs-orange hover:text-abs-ink lg:flex" onClick={() => navigate('footer')}>
-          Start a project <ArrowUpRight size={15} strokeWidth={1.7} />
-        </button>
+        <a className="ml-auto hidden items-center gap-2 rounded-full border border-abs-orange/55 bg-abs-orange/[0.08] px-4 py-[11px] text-[11px] tracking-[0.025em] text-abs-orange-soft transition hover:bg-abs-orange hover:text-abs-ink lg:flex" href="mailto:sales@abstractit.in">
+          Let&apos;s talk <ArrowUpRight size={15} strokeWidth={1.7} />
+        </a>
         <button className="ml-auto bg-transparent p-2 text-abs-text lg:hidden" aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <X size={21} /> : <Menu size={21} />}
         </button>

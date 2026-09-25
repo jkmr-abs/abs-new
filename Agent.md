@@ -1,4 +1,4 @@
-# ABS Studio — Engineering Guide for AI Agents
+# Abstract Business Systems — Engineering Guide for AI Agents
 
 > **Status:** Authoritative repository guidance  
 > **Scope:** All AI-assisted development in this repository

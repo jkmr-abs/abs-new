@@ -20,6 +20,7 @@ function TeamsSection({ data: teamData }) {
       number={teamData.number}
       sectionLabel={teamData.sectionLabel}
       title={teamData.title}
+      titleHighlightWordIndexes={teamData.titleHighlightWordIndexes}
       description={teamData.description}
       interactionData={teamData.interaction}
     >

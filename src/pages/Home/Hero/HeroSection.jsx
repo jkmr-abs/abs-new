@@ -23,7 +23,6 @@ function HeroSection({ data: heroData, onNavigate }) {
       title={heroData.title}
       titleLines={heroData.titleLines}
       titleHighlightWordIndexes={heroData.titleHighlightWordIndexes}
-      titleClassName="text-[clamp(38px,8vw,62px)] lg:text-[clamp(45px,4.8vw,70px)]"
       description={heroData.description}
       action={action}
       interactionData={heroData.interaction}

@@ -17,7 +17,7 @@ function ServiceSlide({ service, currentIndex, totalSlides, onPrevious, onNext, 
           title={service.title}
           highlightWordIndex={service.title.trim().split(/\s+/).length > 1 ? 1 : 0}
           dataElement="ServiceSectionTitle"
-          className="line-clamp-2 lg:text-[clamp(42px,4.2vw,68px)]"
+          className="line-clamp-2"
         />
       </ServiceTitleFrame>
 

@@ -67,7 +67,7 @@ Logo.jsx
   Logo content:
     Brand mark: /public/logo.svg
     Brand name: Abstract
-    Brand descriptor: Business System
+    Brand descriptor: Business Systems
 
 Navbar.jsx
   Fixed global navigation component.
