@@ -1,23 +1,22 @@
-import { Asterisk } from 'lucide-react';
+import InteractionPlaceholder from '../../../components/InteractionPlaceholder';
 import SectionBlock from '../../../components/SectionBlock';
 
-function TeamVisual() {
+function TeamInteractionPlaceholder() {
   return (
-    <div data-component="TeamImagePlaceholder" className="relative h-full min-h-[295px] overflow-hidden border border-white/[0.12] bg-[linear-gradient(145deg,rgba(255,103,29,0.09),transparent_46%),#101216] shadow-[0_0_2.8rem_rgba(255,103,29,0.13)] lg:h-[min(64vh,600px)] lg:min-h-[460px]">
-      <div className="absolute bottom-[12%] left-[9%] right-[9%] top-12 overflow-hidden bg-[radial-gradient(ellipse_at_51%_30%,rgba(255,171,128,0.31),transparent_17%),linear-gradient(160deg,#26242a,#111216_63%)] lg:bottom-[13%] lg:left-[13%] lg:right-[13%] lg:top-[12%] before:absolute before:left-[-10%] before:top-[24%] before:h-px before:w-[120%] before:rotate-[-32deg] before:bg-white/10 before:content-[''] after:absolute after:left-[-10%] after:top-[62%] after:h-px after:w-[120%] after:rotate-[-32deg] after:bg-white/10 after:content-['']">
-        <div className="absolute left-[46%] top-[16%] aspect-[0.82] w-[26%] -translate-x-1/2 rounded-[48%_46%_42%_44%] bg-[linear-gradient(130deg,#bd795d,#542e2a_75%)] shadow-[22px_-13px_0_-2px_#221f24]" />
-        <div className="absolute bottom-[-20%] left-1/2 h-[62%] w-[63%] -translate-x-1/2 rounded-[50%_50%_0_0] bg-[linear-gradient(100deg,#292c35,#101116_70%)]" />
-        <div className="absolute right-[13%] top-[45%] aspect-square w-[16%] rounded-full border border-abs-orange shadow-[0_0_25px_rgba(255,103,29,0.35)]" />
+    <InteractionPlaceholder sectionId="team">
+      <div data-component="TeamInteractionSlots" className="absolute inset-x-[12%] bottom-[16%] top-[16%] grid grid-cols-3 gap-2" aria-label="Three future team interaction slots">
+        <div data-element="TeamInteractionSlot" className="border border-white/10 bg-white/[0.025]" />
+        <div data-element="TeamInteractionSlot" className="border border-abs-orange/45 bg-abs-orange/[0.06]" />
+        <div data-element="TeamInteractionSlot" className="border border-white/10 bg-white/[0.025]" />
       </div>
-      <div className="absolute bottom-[8%] left-[10%] right-[10%] flex items-center justify-between"><span className="h-px w-[28%] bg-abs-orange/60" /><span className="h-px w-[42%] bg-white/15" /><span className="text-abs-orange"><Asterisk size={24} /></span></div>
-    </div>
+    </InteractionPlaceholder>
   );
 }
 
 function TeamSection() {
   return (
-    <SectionBlock id="team" number="05" sectionLabel="The studio" title="Small enough to<br /><em>care more.</em>" description="A close-knit collective with big-agency range. We bring the right minds to every challenge, and stay close from day one to done.">
-      <TeamVisual />
+    <SectionBlock id="team" number="05" sectionLabel="TEAMS LABEL" title="Teams section title" description="Teams section description">
+      <TeamInteractionPlaceholder />
     </SectionBlock>
   );
 }

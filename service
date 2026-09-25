@@ -1,3 +1,44 @@
+ServiceSectionTitle reduce the size i want same line next ServiceSectionDescription if available then show otherwise not show then bottom have
+ServiceContentSlider
+ServiceSlideIcon - Features i want like this if 4 features available then show 4 if 3 available then 3 show, after that left and right arrow icon i want 
+
+
+Layout
+
+OUR SERVICES
+
+Custom Software Development 
+We build full-stack applications on the cloud:
+
+[ Feature 1 ] 
+[ Feature 2 ] 
+[ Feature 3 ]
+     ←       →
+
+--------------------------------------------
+
+Recruitment
+
+[ Feature 1 ] 
+[ Feature 2 ] 
+[ Feature 3 ] 
+[ Feature 4 ]
+    ←       →
+
+--------------------------------------------
+
+Staffing Solutions
+
+[ Feature 1 ] 
+[ Feature 2 ]
+[ Feature 3 ]
+[ Feature 4 ]
+     ←       →
+
+
+
+
+
 2. Services Section
 
 **[ LEFT SIDE - Text Content ]**

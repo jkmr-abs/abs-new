@@ -113,148 +113,103 @@ InteractionPanel
   Right-side visual or interactive panel reserved for visual systems,
   animations, data visualizations, or future Three.js Canvas content.
 
+InteractionPlaceholder
+  Reusable dummy visual used until a section receives its final interaction.
+
 
 4. HOME / HERO SECTION
 ----------------------
 
 HomeSection
-├── HeroPrimaryContentPanel
-│   ├── SectionIndex
-│   ├── SectionLabel: OUR MOTTO
-│   ├── HeroTitle
-│   ├── HeroDescription
+├── PrimaryContentPanel
+│   ├── SectionLabel
+│   ├── SectionTitle
+│   ├── SectionDescription
 │   ├── HeroActionGroup
 │   │   ├── PrimaryActionButton
 │   │   └── SecondaryActionButton
-│   └── HeroMetrics
-│       ├── PeopleMetric
-│       │   ├── MetricValue: 20+
-│       │   └── MetricLabel: People with purpose
-│       ├── BuildingMetric
-│       │   ├── MetricValue: 12
-│       │   └── MetricLabel: Years of building better
-│       └── PossibilitiesMetric
-│           ├── MetricValue: infinity symbol
-│           └── MetricLabel: Possibilities ahead
-└── HeroInteractionPanel
-    ├── HeroPanelHeader
-    ├── HeroOrbitVisual
-    ├── HeroCoordinateLabels
-    ├── HeroCenterMark
-    └── HeroPanelFooter
-
-HeroTitle:
-  Premium quality.
-  Affordable prices.
-
-HeroDescription:
-  Clarity in Simplicity. Transparency in Action. We design and deliver
-  thoughtful technology, exceptional teams, and the momentum to move your
-  business forward.
-
-HeroActionGroup:
-  PrimaryActionButton: what we do
-  SecondaryActionButton: Meet the team
+│   └── HeroSupportingInformation
+└── InteractionPanel
+    └── InteractionPlaceholder
 
 
 5. SERVICE SECTION
 -------------------
 
 ServiceSection
-├── ServicePrimaryContentPanel
-│   ├── SectionIndex
-│   ├── SectionLabel
-│   ├── ServiceTitle
-│   └── ServiceDescription
-└── ServiceInteractionPanel
-    ├── ServiceList
-    ├── ServiceListItem
-    ├── ServiceListIndex
-    ├── ActiveServiceItem
-    └── ServicePanelNote
+├── PrimaryContentPanel
+│   └── ServiceContentSlider
+│       ├── SectionLabel
+│       ├── ServiceSectionTitle
+│       ├── ServiceSectionDescription
+│       ├── ServiceFeatureList
+│       │   └── ServiceSlideFeature
+│       │       ├── ServiceSlideIcon
+│       │       └── ServiceSlideFeatureContent
+│       └── ServiceSliderControls
+└── InteractionPanel
+    └── LPDoubleWavePlaceholder
 
 
 6. EXPERTISE SECTION
 ---------------------
 
 ExpertiseSection
-├── ExpertisePrimaryContentPanel
-│   ├── SectionIndex
-│   ├── SectionLabel: OUR EXPERTISE
-│   ├── ExpertiseTitle
-│   └── ExpertiseDescription
-└── ExpertiseInteractionPanel
-    ├── ExpertiseSignalGrid
-    ├── CultureSignalCard
-    ├── FutureSignalCard
-    ├── CraftSignalCard
-    ├── SignalCardLabel
-    └── ExpertiseCategoryCaption
-
-ExpertiseTitle:
-  Technologies That
-  Power Ideas
-
-ExpertiseDescription:
-  We combine modern technologies to build scalable and high-performance
-  solutions.
+├── PrimaryContentPanel
+│   ├── SectionLabel
+│   ├── SectionTitle
+│   └── SectionDescription
+└── InteractionPanel
+    └── InteractionPlaceholder
 
 
 7. CLIENT SECTION
 ------------------
 
 ClientSection
-├── ClientPrimaryContentPanel
-│   ├── SectionIndex
+├── PrimaryContentPanel
 │   ├── SectionLabel
-│   ├── ClientTitle
-│   └── ClientDescription
-└── ClientInteractionPanel
-    ├── TestimonialBlock
-    ├── TestimonialQuote
-    ├── TestimonialAuthor
-    ├── TestimonialRole
-    └── ClientLogoList
+│   ├── SectionTitle
+│   └── ClientSupportingContent
+│       ├── ClientSupportingBlock
+│       └── ClientSupportingBlock
+└── InteractionPanel
+    └── InteractionPlaceholder
 
 
 8. TEAM SECTION
 ----------------
 
 TeamSection
-├── TeamPrimaryContentPanel
-│   ├── SectionIndex
+├── PrimaryContentPanel
 │   ├── SectionLabel
-│   ├── TeamTitle
-│   └── TeamDescription
-└── TeamInteractionPanel
-    ├── TeamPortraitVisual
-    ├── TeamPortraitLabel
-    ├── TeamPanelCaption
-    └── TeamDecorativeMark
+│   ├── SectionTitle
+│   └── SectionDescription
+└── InteractionPanel
+    └── TeamInteractionSlots
+        ├── TeamInteractionSlot
+        ├── TeamInteractionSlot
+        └── TeamInteractionSlot
 
 
 9. FOOTER STRUCTURE
 --------------------
 
 GlobalFooter
-├── FooterHeader
-│   └── FooterPrompt
-├── FooterContactBlock
-│   ├── FooterSectionLabel
+├── FooterPrimaryContent
+│   ├── FooterLabel
 │   ├── FooterTitle
-│   └── ContactEmailLink
-├── FooterResourceGrid
+│   ├── FooterSupportingInformation
 │   ├── FooterBrandBlock
 │   │   ├── Logo
-│   │   └── BrandAddress
-│   ├── FooterQuickLinks
-│   │   └── FooterQuickLinkItem
-│   └── FooterSocialLinks
-│       └── FooterSocialLinkItem
+│   │   └── FooterAddress
+│   └── FooterResourceGrid
+│       ├── FooterQuickLinks
+│       └── FooterSocialLinks
 └── FooterLegalBar
-    ├── CopyrightNotice
+    ├── CopyrightInformation
     ├── PrivacyPolicyLink
-    └── TermsConditionsLink
+    └── OtherLegalLink
 
 
 10. VISUAL PANEL TERMINOLOGY
@@ -293,11 +248,11 @@ ServicePrimaryContentPanel.
 ServiceSection
 ├── ServiceContentSlider
 │   ├── ServiceSectionTitle
-│   ├── ServiceSectionDescription
-│   ├── ServiceSlide
-│   │   ├── ServiceSlideIcon
-│   │   ├── ServiceSlideTitle
-│   │   └── ServiceSlideDescription
+│   ├── ServiceSectionDescription (conditional)
+│   ├── ServiceFeatureList
+│   │   └── ServiceSlideFeature
+│   │       ├── ServiceSlideIcon
+│   │       └── ServiceSlideFeatureContent
 │   ├── ServiceSliderControls
 │   │   ├── ServicePreviousButton
 │   │   └── ServiceNextButton
@@ -309,17 +264,14 @@ Recommended technical names:
 ServiceContentSlider
   Interactive slider containing the service content.
 
-ServiceSlide
-  One individual service item in the slider.
+ServiceSlideFeature
+  One individual feature item in the active service slide.
 
 ServiceSlideIcon
-  Icon representing the current service.
+  Icon representing an individual service feature.
 
-ServiceSlideTitle
-  Title of the current service slide.
-
-ServiceSlideDescription
-  Description of the current service slide.
+ServiceSlideFeatureContent
+  Text content for an individual service feature.
 
 ServiceSectionTitle
   Main title displayed above the service slider.
@@ -342,11 +294,14 @@ ServiceSlideIndicator
 Example technical markup:
 
 <div data-component="ServiceContentSlider">
-  <article data-component="ServiceSlide">
-    <span data-element="ServiceSlideIcon"></span>
-    <h2 data-element="ServiceSlideTitle"></h2>
-    <p data-element="ServiceSlideDescription"></p>
-  </article>
+  <h2 data-element="ServiceSectionTitle"></h2>
+  <p data-element="ServiceSectionDescription"></p>
+  <ul data-component="ServiceFeatureList">
+    <li data-component="ServiceSlideFeature">
+      <span data-element="ServiceSlideIcon"></span>
+      <span data-element="ServiceSlideFeatureContent"></span>
+    </li>
+  </ul>
   <div data-component="ServiceSliderControls">
     <button data-action="ServicePreviousButton"></button>
     <button data-action="ServiceNextButton"></button>
