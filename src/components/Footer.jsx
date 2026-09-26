@@ -19,15 +19,6 @@ function Footer({ onNavigate }) {
             dataElement="FooterTitle"
             className="text-[clamp(42px,7vw,72px)] lg:text-[clamp(52px,7vw,92px)]"
           />
-          <div data-component="FooterBrandBlock" className="mt-10">
-            <div className="flex items-center justify-between gap-4">
-              <Logo />
-              <a data-element="FooterEmail" className="inline-flex shrink-0 items-center gap-2 border-b border-abs-orange pb-[7px] text-sm text-abs-orange-soft md:text-[15px]" href={`mailto:${footerData.email}`}>
-                {footerData.email} <ArrowUpRight size={18} className="text-abs-orange" />
-              </a>
-            </div>
-            <a data-element="FooterAddress" className="mt-3 block max-w-[300px] whitespace-pre-line text-xs leading-[1.6] text-abs-muted transition hover:text-abs-orange md:text-sm" href={footerData.address.href} target="_blank" rel="noreferrer">{footerData.address.label}</a>
-          </div>
         </div>
 
         <div data-component="FooterResourceGrid" className="grid grid-cols-2 content-start gap-8 pt-1 md:pt-[42px]">
@@ -39,6 +30,16 @@ function Footer({ onNavigate }) {
             <span data-element="FooterResourceLabel" className="mb-1.5 text-[9px] uppercase tracking-[0.14em] text-abs-orange">{footerData.socialLinksLabel}</span>
             {footerData.socialLinks.map((link, index) => <a className="inline-flex w-max items-center gap-[7px] text-sm text-abs-muted transition hover:text-abs-orange" href={link.href} key={`${link.label}-${link.href}-${index}`} target={link.external ? '_blank' : undefined} rel={link.external ? 'noreferrer' : undefined}>{link.label} {link.external && <ArrowUpRight size={14} />}</a>)}
           </div>
+        </div>
+
+        <div data-component="FooterBrandBlock" className="col-span-full mt-6 md:mt-10">
+          <div className="flex items-center justify-between gap-4">
+            <Logo size="large" />
+            <a data-element="FooterEmail" className="inline-flex shrink-0 items-center gap-2 border-b border-abs-orange pb-[7px] text-sm text-abs-orange-soft md:text-[15px]" href={`mailto:${footerData.email}`}>
+              {footerData.email} <ArrowUpRight size={18} className="text-abs-orange" />
+            </a>
+          </div>
+          <a data-element="FooterAddress" className="mt-4 block max-w-[360px] whitespace-pre-line text-sm leading-[1.6] text-abs-muted transition hover:text-abs-orange md:text-base" href={footerData.address.href} target="_blank" rel="noreferrer">{footerData.address.label}</a>
         </div>
       </div>
 
