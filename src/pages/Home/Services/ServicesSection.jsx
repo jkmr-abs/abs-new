@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import InteractionPlaceholder from '../../../components/InteractionPlaceholder';
 import SectionBlock from '../../../components/SectionBlock';
 import ServiceSlide from './ServiceSlide';
@@ -14,11 +14,48 @@ function ServiceInteractionPlaceholder({ service }) {
 
 function ServicesSection({ services = [], sectionLabel = 'OUR SERVICES' }) {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  const [sharedSlideHeight, setSharedSlideHeight] = useState(null);
+  const slideRefs = useRef([]);
   const activeService = services[activeSlideIndex];
 
   useEffect(() => {
     setActiveSlideIndex((currentIndex) => Math.min(currentIndex, Math.max(services.length - 1, 0)));
   }, [services.length]);
+
+  useLayoutEffect(() => {
+    if (!services.length) return undefined;
+
+    const measureSlides = () => {
+      const heights = slideRefs.current
+        .slice(0, services.length)
+        .map((slide) => slide?.getBoundingClientRect().height || 0);
+      const tallestSlide = Math.max(...heights, 0);
+
+      if (tallestSlide > 0) {
+        setSharedSlideHeight((currentHeight) => (
+          currentHeight === tallestSlide ? currentHeight : tallestSlide
+        ));
+      }
+    };
+
+    measureSlides();
+    window.addEventListener('resize', measureSlides);
+
+    const resizeObserver = typeof ResizeObserver !== 'undefined'
+      ? new ResizeObserver(measureSlides)
+      : null;
+
+    slideRefs.current.slice(0, services.length).forEach((slide) => {
+      if (slide) resizeObserver?.observe(slide);
+    });
+
+    document.fonts?.ready.then(measureSlides);
+
+    return () => {
+      window.removeEventListener('resize', measureSlides);
+      resizeObserver?.disconnect();
+    };
+  }, [services]);
 
   if (!services.length) return null;
 
@@ -33,15 +70,29 @@ function ServicesSection({ services = [], sectionLabel = 'OUR SERVICES' }) {
       sectionLabel={sectionLabel}
       interactionData={activeService.interaction}
       primaryContent={(
-        <div data-component="PrimaryContentPanel" data-section-id="service">
-          <ServiceSlide
-            service={activeService}
-            currentIndex={activeSlideIndex}
-            totalSlides={services.length}
-            onPrevious={() => selectSlide(-1)}
-            onNext={() => selectSlide(1)}
-            sectionLabel={sectionLabel}
-          />
+        <div
+          data-component="ServiceSlideStack"
+          data-section-id="service"
+          className="grid items-start"
+          style={sharedSlideHeight ? { minHeight: `${sharedSlideHeight}px` } : undefined}
+        >
+          {services.map((service, index) => (
+            <div
+              ref={(element) => { slideRefs.current[index] = element; }}
+              className={`col-start-1 row-start-1 ${index === activeSlideIndex ? 'relative' : 'invisible pointer-events-none'}`}
+              aria-hidden={index !== activeSlideIndex}
+              key={service.id}
+            >
+              <ServiceSlide
+                service={service}
+                currentIndex={activeSlideIndex}
+                totalSlides={services.length}
+                onPrevious={() => selectSlide(-1)}
+                onNext={() => selectSlide(1)}
+                sectionLabel={sectionLabel}
+              />
+            </div>
+          ))}
         </div>
       )}
     >

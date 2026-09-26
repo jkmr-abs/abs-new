@@ -48,8 +48,8 @@ const data = {
       label: 'Recruitment Solution',
       title: 'Talent Recruitment',
       features: [
-        { id: 'recruitment-feature-1', icon: 'circle', title: 'Talent sourcing', description: 'We identify, attract, and engage with the best candidates in your industry.' },
-        { id: 'recruitment-feature-2', icon: 'circle', title: 'Screening and assessment', description: 'Our rigorous evaluation process ensures you get the right fit.' },
+        { id: 'recruitment-feature-1', icon: 'circle', title: 'Talent sourcing', description: 'We identify and attract top talent in your industry.' },
+        { id: 'recruitment-feature-2', icon: 'circle', title: 'Screening and assessment', description: 'We assess candidates to find the right fit for your team.' },
         { id: 'recruitment-feature-3', icon: 'circle', title: 'Offer negotiation', description: 'We assist in securing top talent with competitive offers.' },
         { id: 'recruitment-feature-4', icon: 'circle', title: 'Onboarding support', description: 'We ensure a smooth transition for your new hires.' },
       ],

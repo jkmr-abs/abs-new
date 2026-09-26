@@ -29,7 +29,7 @@ function ServiceSlide({ service, currentIndex, totalSlides, onPrevious, onNext, 
         />
       )}
 
-      <div data-element="ServiceFeatureFrame" className="mt-6 lg:mt-8">
+      <div data-element="ServiceFeatureFrame" className="mt-6 lg:mt-6">
         <Features items={service.features} featureComponent="ServiceSlideFeature" iconElement="ServiceSlideIcon" contentElement="ServiceSlideFeatureContent" />
       </div>
 
@@ -44,6 +44,7 @@ function ServiceSlide({ service, currentIndex, totalSlides, onPrevious, onNext, 
         </div>
       )}
       <ServiceNavigation
+        className="mt-2 lg:mt-3"
         current={currentIndex + 1}
         total={totalSlides}
         onPrevious={onPrevious}

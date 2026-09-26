@@ -1,6 +1,6 @@
 import SlideNavigation from '../../../components/common/SlideNavigation';
 
-function ServiceNavigation({ current, total, onPrevious, onNext, previousLabel, nextLabel }) {
+function ServiceNavigation({ current, total, onPrevious, onNext, previousLabel, nextLabel, className = '' }) {
   return (
     <SlideNavigation
       current={current}
@@ -9,6 +9,7 @@ function ServiceNavigation({ current, total, onPrevious, onNext, previousLabel, 
       onNext={onNext}
       previousLabel={previousLabel}
       nextLabel={nextLabel}
+      className={className}
     />
   );
 }
