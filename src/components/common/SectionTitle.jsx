@@ -3,7 +3,7 @@ function SectionTitle({ title, titleLines, highlightWordIndex, highlightWordInde
   let wordOffset = 0;
 
   return (
-    <h2 data-element={dataElement} className={`max-w-[620px] font-display text-[clamp(38px,10vw,56px)] font-medium leading-[0.98] tracking-[-0.075em] text-abs-text lg:text-[clamp(42px,4.8vw,72px)] ${className}`}>
+    <h2 data-element={dataElement} className={`max-w-[620px] font-display text-[clamp(38px,10vw,56px)] font-medium leading-[0.98] tracking-[-0.075em] text-abs-text capitalize lg:text-[clamp(42px,4.8vw,72px)] ${className}`}>
       {lines.map((line, lineIndex) => {
         const words = typeof line === 'string' ? line.trim().split(/\s+/) : [];
         const renderedLine = words.map((word, index) => {

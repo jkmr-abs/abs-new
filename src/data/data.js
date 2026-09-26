@@ -32,11 +32,11 @@ const data = {
       id: 'custom-software-solution',
       label: 'Customer Support Solution',
       title: 'Custom Software Solution',
-      description: 'We build full-stack applications on the cloud:',
       features: [
-        { id: 'software-feature-1', icon: 'circle', title: 'As tech partners' },
-        { id: 'software-feature-2', icon: 'circle', title: 'On fixed-bid engagements' },
-        { id: 'software-feature-3', icon: 'circle', title: 'As a team on T&M at USD 25/hour/person' },
+        { id: 'software-feature-1', icon: 'circle', title: 'We build full-stack applications on the cloud' },
+        { id: 'software-feature-2', icon: 'circle', title: 'As tech partners' },
+        { id: 'software-feature-3', icon: 'circle', title: 'On fixed-bid engagements' },
+        { id: 'software-feature-4', icon: 'circle', title: 'As a team on T&M at USD 25/hour/person' },
       ],
       primaryButton: null,
       secondaryButton: null,
@@ -59,9 +59,9 @@ const data = {
       interaction: { type: 'lp-double-wave-placeholder' },
     },
     {
-      id: 'staffing-solutions',
-      label: 'Staffing Solution',
-      title: 'Staffing Solutions',
+      id: 'strategic-staffing',
+      label: 'Strategic Staffing Solutions',
+      title: 'Strategic Staffing Solutions',
       features: [
         { id: 'staffing-feature-1', icon: 'circle', title: 'Find and hire top talent, quickly.' },
         { id: 'staffing-feature-2', icon: 'circle', title: 'Help build diverse teams.' },
