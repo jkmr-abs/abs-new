@@ -15,8 +15,8 @@ function ServiceInteractionPlaceholder({ service }) {
 function ServicesSection({ services = [], sectionLabel = 'OUR SERVICES' }) {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const [sharedSlideHeight, setSharedSlideHeight] = useState(null);
-  const slideRefs = useRef([]);
-  const activeService = services[activeSlideIndex];
+  const slideMeasurementRefs = useRef([]);
+  const activeService = services[Math.min(activeSlideIndex, Math.max(services.length - 1, 0))];
 
   useEffect(() => {
     setActiveSlideIndex((currentIndex) => Math.min(currentIndex, Math.max(services.length - 1, 0)));
@@ -25,10 +25,23 @@ function ServicesSection({ services = [], sectionLabel = 'OUR SERVICES' }) {
   useLayoutEffect(() => {
     if (!services.length) return undefined;
 
+    let isCancelled = false;
+
     const measureSlides = () => {
-      const heights = slideRefs.current
+      if (isCancelled) return;
+
+      const heights = slideMeasurementRefs.current
         .slice(0, services.length)
-        .map((slide) => slide?.getBoundingClientRect().height || 0);
+        .map((slide) => {
+          if (!slide) return 0;
+
+          // scrollHeight captures the natural content height, while the
+          // bounding rect accounts for any rendered layout differences.
+          return Math.ceil(Math.max(
+            slide.scrollHeight,
+            slide.getBoundingClientRect().height,
+          ));
+        });
       const tallestSlide = Math.max(...heights, 0);
 
       if (tallestSlide > 0) {
@@ -45,13 +58,15 @@ function ServicesSection({ services = [], sectionLabel = 'OUR SERVICES' }) {
       ? new ResizeObserver(measureSlides)
       : null;
 
-    slideRefs.current.slice(0, services.length).forEach((slide) => {
+    slideMeasurementRefs.current.slice(0, services.length).forEach((slide) => {
       if (slide) resizeObserver?.observe(slide);
     });
 
-    document.fonts?.ready.then(measureSlides);
+    const fontsReady = document.fonts?.ready;
+    fontsReady?.then(measureSlides);
 
     return () => {
+      isCancelled = true;
       window.removeEventListener('resize', measureSlides);
       resizeObserver?.disconnect();
     };
@@ -73,26 +88,46 @@ function ServicesSection({ services = [], sectionLabel = 'OUR SERVICES' }) {
         <div
           data-component="ServiceSlideStack"
           data-section-id="service"
-          className="grid items-start"
-          style={sharedSlideHeight ? { minHeight: `${sharedSlideHeight}px` } : undefined}
+          className="relative"
+          style={sharedSlideHeight ? { height: `${sharedSlideHeight}px` } : undefined}
         >
-          {services.map((service, index) => (
-            <div
-              ref={(element) => { slideRefs.current[index] = element; }}
-              className={`col-start-1 row-start-1 ${index === activeSlideIndex ? 'relative' : 'invisible pointer-events-none'}`}
-              aria-hidden={index !== activeSlideIndex}
-              key={service.id}
-            >
-              <ServiceSlide
-                service={service}
-                currentIndex={activeSlideIndex}
-                totalSlides={services.length}
-                onPrevious={() => selectSlide(-1)}
-                onNext={() => selectSlide(1)}
-                sectionLabel={sectionLabel}
-              />
-            </div>
-          ))}
+          {/*
+            Keep every slide rendered in the document so its natural height can
+            be measured. Visibility-hidden content is still laid out and does
+            not affect the active slide's accessibility or interaction.
+          */}
+          <div
+            data-component="ServiceSlideMeasurements"
+            className="pointer-events-none invisible absolute inset-x-0 top-0"
+            aria-hidden="true"
+          >
+            {services.map((service, index) => (
+              <div
+                ref={(element) => { slideMeasurementRefs.current[index] = element; }}
+                key={service.id}
+              >
+                <ServiceSlide
+                  service={service}
+                  currentIndex={activeSlideIndex}
+                  totalSlides={services.length}
+                  onPrevious={() => selectSlide(-1)}
+                  onNext={() => selectSlide(1)}
+                  sectionLabel={sectionLabel}
+                />
+              </div>
+            ))}
+          </div>
+
+          <div data-component="ServiceSlideViewport" className="relative">
+            <ServiceSlide
+              service={activeService}
+              currentIndex={activeSlideIndex}
+              totalSlides={services.length}
+              onPrevious={() => selectSlide(-1)}
+              onNext={() => selectSlide(1)}
+              sectionLabel={sectionLabel}
+            />
+          </div>
         </div>
       )}
     >

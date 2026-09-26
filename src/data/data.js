@@ -49,7 +49,7 @@ const data = {
       title: 'Talent Recruitment',
       features: [
         { id: 'recruitment-feature-1', icon: 'circle', title: 'Talent sourcing', description: 'We identify and attract top talent in your industry.' },
-        { id: 'recruitment-feature-2', icon: 'circle', title: 'Screening and assessment', description: 'We assess candidates to find the right fit for your team.' },
+        { id: 'recruitment-feature-2', icon: 'circle', title: 'Screening and assessment', description: 'We find the right fit.' },
         { id: 'recruitment-feature-3', icon: 'circle', title: 'Offer negotiation', description: 'We assist in securing top talent with competitive offers.' },
         { id: 'recruitment-feature-4', icon: 'circle', title: 'Onboarding support', description: 'We ensure a smooth transition for your new hires.' },
       ],
@@ -64,7 +64,7 @@ const data = {
       title: 'Strategic Staffing Solutions',
       features: [
         { id: 'staffing-feature-1', icon: 'circle', title: 'Find and hire top talent, quickly.' },
-        { id: 'staffing-feature-2', icon: 'circle', title: 'Help build diverse teams.' },
+        { id: 'staffing-feature-2', icon: 'circle', title: 'Build diverse teams.' },
         { id: 'staffing-feature-3', icon: 'circle', title: 'Ensure the most qualified candidates are capable of delivering results.' },
         { id: 'staffing-feature-4', icon: 'circle', title: 'Help organizations of all sizes acquire top-tier talent.' },
       ],
